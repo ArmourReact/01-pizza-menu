@@ -22,15 +22,18 @@ const Header = () => {
 };
 
 const Menu = () => {
+  const hasPizzas = pizzaData.length > 0;
+
   return (
     <main className="menu">
       <h2>Our menu</h2>
-
-      <ul className="pizzas">
-        {pizzaData.map((p) => (
-          <Pizza key={p.name} pizza={p} />
-        ))}
-      </ul>
+      {hasPizzas && (
+        <ul className="pizzas">
+          {pizzaData.map((p) => (
+            <Pizza key={p.name} pizza={p} />
+          ))}
+        </ul>
+      )}
     </main>
   );
 };
