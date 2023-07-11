@@ -51,15 +51,13 @@ const Menu = () => {
 const Pizza = ({ pizza }) => {
   const { name, ingredients, photoName, price, soldOut } = pizza;
 
-  if (soldOut) return null;
-
   return (
-    <li className="pizza">
+    <li className={`pizza ${soldOut ? "sold-out" : ""}`}>
       <img alt={name} src={photoName} />
       <div>
         <h3>{name}</h3>
         <p>{ingredients}</p>
-        <span>{price}</span>
+        <span>{soldOut ? "SOLD OUT" : price}</span>
       </div>
     </li>
   );
