@@ -29,14 +29,14 @@ const Menu = () => {
         name="Pizza Spinaci"
         ingredients="ingredients"
         photoUrl="pizzas/spinaci.jpg"
-        price="10"
+        price={10}
       />
 
       <Pizza
         name="Pizza Funghi"
         ingredients="pizza ingredients"
         photoUrl="pizzas/funghi.jpg"
-        price="12"
+        price={12}
       />
     </main>
   );
@@ -45,11 +45,13 @@ const Menu = () => {
 const Pizza = (props) => {
   const { name, ingredients, photoUrl, price } = props;
   return (
-    <div>
+    <div className="pizza">
       <img alt={name} src={photoUrl} />
-      <h3>{name}</h3>
-      <p>{ingredients}</p>
-      <p>{price}</p>
+      <div>
+        <h3>{name}</h3>
+        <p>{ingredients}</p>
+        <span>{price}</span>
+      </div>
     </div>
   );
 };
