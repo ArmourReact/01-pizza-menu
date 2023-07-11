@@ -25,8 +25,32 @@ const Menu = () => {
   return (
     <main className="menu">
       <h2>Our menu</h2>
-      <Pizza />
+      <Pizza
+        name="Pizza Spinaci"
+        ingredients="ingredients"
+        photoUrl="pizzas/spinaci.jpg"
+        price="10"
+      />
+
+      <Pizza
+        name="Pizza Funghi"
+        ingredients="pizza ingredients"
+        photoUrl="pizzas/funghi.jpg"
+        price="12"
+      />
     </main>
+  );
+};
+
+const Pizza = (props) => {
+  const { name, ingredients, photoUrl, price } = props;
+  return (
+    <div>
+      <img alt={name} src={photoUrl} />
+      <h3>{name}</h3>
+      <p>{ingredients}</p>
+      <p>{price}</p>
+    </div>
   );
 };
 
@@ -39,16 +63,6 @@ const Footer = () => {
     <footer className="footer">
       {new Date().toLocaleTimeString()}. We're currently open!
     </footer>
-  );
-};
-
-const Pizza = () => {
-  return (
-    <div>
-      <img alt="Pizza Spinaci" src="pizzas/spinaci.jpg" />
-      <h3>Pizza Spinaci</h3>
-      <p>ingredients</p>
-    </div>
   );
 };
 
