@@ -26,7 +26,10 @@ const Menu = () => {
 };
 
 const Footer = () => {
-  return <h1>Hello React</h1>;
+  const hour = new Date().getHours();
+  const [openHour, closeHour] = [12, 22];
+  const isOpen = hour >= openHour && hour <= closeHour;
+
   return (
     <footer>{new Date().toLocaleTimeString()}. We're currently open!</footer>
   );
