@@ -26,11 +26,11 @@ const Menu = () => {
     <main className="menu">
       <h2>Our menu</h2>
 
-      <div>
+      <ul className="pizzas">
         {pizzaData.map((p) => (
-          <Pizza pizza={p} />
+          <Pizza key={p.name} pizza={p} />
         ))}
-      </div>
+      </ul>
     </main>
   );
 };
@@ -38,14 +38,14 @@ const Menu = () => {
 const Pizza = (props) => {
   const { name, ingredients, photoName, price, soldOut } = props.pizza;
   return (
-    <div className="pizza">
+    <li className="pizza">
       <img alt={name} src={photoName} />
       <div>
         <h3>{name}</h3>
         <p>{ingredients}</p>
         <span>{price}</span>
       </div>
-    </div>
+    </li>
   );
 };
 
