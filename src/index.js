@@ -1,15 +1,36 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { pizzaData } from "./data";
 
 const App = () => {
   return (
     <div>
-      <h1>Hello React</h1>
+      <Header />
+      <Menu />
+      <Footer />
+    </div>
+  );
+};
+
+const Header = () => {
+  return <h1>Fast React Pizza Co.</h1>;
+};
+
+const Menu = () => {
+  return (
+    <div>
+      <h2>Our menu</h2>
       <Pizza />
     </div>
   );
 };
+
+const Footer = () => {
   return <h1>Hello React</h1>;
+  return (
+    <footer>{new Date().toLocaleTimeString()}. We're currently open!</footer>
+  );
+};
 
 const Pizza = () => {
   return (
