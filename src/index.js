@@ -40,8 +40,8 @@ const Menu = () => {
   );
 };
 
-const Pizza = (props) => {
-  const { name, ingredients, photoName, price, soldOut } = props.pizza;
+const Pizza = ({ pizza }) => {
+  const { name, ingredients, photoName, price, soldOut } = pizza;
 
   if (soldOut) return null;
 
@@ -73,10 +73,10 @@ const Footer = () => {
   );
 };
 
-const Order = (props) => {
+const Order = ({ hour }) => {
   return (
     <div className="order">
-      <p>We're open until {props.hour}:00. Come visit us or order online</p>
+      <p>We're open until {hour}:00. Come visit us or order online</p>
       <button className="btn">Order</button>
     </div>
   );
