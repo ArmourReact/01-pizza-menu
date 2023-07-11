@@ -27,12 +27,20 @@ const Menu = () => {
   return (
     <main className="menu">
       <h2>Our menu</h2>
+
       {hasPizzas ? (
-        <ul className="pizzas">
-          {pizzaData.map((p) => (
-            <Pizza key={p.name} pizza={p} />
-          ))}
-        </ul>
+        <>
+          <p>
+            Authentic Italian cuisine. 6 creative dishes to choose from. All
+            from our stone oven, all organic, all delicious.
+          </p>
+
+          <ul className="pizzas">
+            {pizzaData.map((p) => (
+              <Pizza key={p.name} pizza={p} />
+            ))}
+          </ul>
+        </>
       ) : (
         <p>We're still working on our menu. Please come back later.</p>
       )}
